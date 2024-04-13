@@ -1,8 +1,8 @@
+
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { DrawerWithForm } from '../components/Drawer'
 import QuestionsContainer from '../components/QuestionsContainer'
-
 
 const page = () => {
   return (

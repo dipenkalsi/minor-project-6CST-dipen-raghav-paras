@@ -1,13 +1,11 @@
 'use client'
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState , useEffect} from 'react';
 import { usePathname } from 'next/navigation'
 import Navbar from '@/app/components/Navbar';
 import parse from 'html-react-parser';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Skeleton } from "@/components/ui/skeleton"
-
-
 const page = () => {
     const [data, setData] = useState("")
     const genAI = new GoogleGenerativeAI('AIzaSyAV5l_dP55g3gt3NmkzNF2N33xWB5_Z1dc');

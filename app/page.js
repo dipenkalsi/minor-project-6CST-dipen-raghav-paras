@@ -1,3 +1,4 @@
+'use client';
 import Head from "next/head";
 import Hero from "./components/LandingPage/hero";
 import Navbar from "./components/Navbar";
