@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { useEffect } from "react";
 import FilterState from "./context/filterState";
+import { useRouter } from "next/navigation";
 // import alanBtn from '@alan-ai/alan-sdk-web';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,12 +14,28 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 export default function RootLayout({ children }) {
+  const router  = useRouter();
   useEffect(() => {
     if (typeof window !== 'undefined') {
       import('@alan-ai/alan-sdk-web').then(({ default: alanBtn }) => {
         alanBtn({
           key: 'b71b2e5cb15cf5bcd70552aeca9033062e956eca572e1d8b807a3e2338fdd0dc/stage',
+          onCommand:({command})=>{
+            if(command==='navigateToDiscussion'){
+              router.push('/discussion')
+            }
+            else if(command==='navigateToDashboard'){
+              router.push('/dashboard')
+            }
+            else if(command==='navigateToHome'){
+              router.push('/')
+            }
+            else if(command==='goBack'){
+              router.back();
+            }
+          }
         });
+
       });
     }
 
