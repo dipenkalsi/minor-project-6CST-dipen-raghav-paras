@@ -6,6 +6,7 @@ import Main from "../components/Main";
 import FilterState from "../context/filterState";
 
 export default function Home() {
+  
   return (
     <FilterState>
       <div className="h-screen fixed ">

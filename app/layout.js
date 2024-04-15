@@ -4,7 +4,7 @@ import "./globals.css";
 import { useEffect } from "react";
 import FilterState from "./context/filterState";
 import { useRouter } from "next/navigation";
-// import alanBtn from '@alan-ai/alan-sdk-web';
+import { getCookie, hasCookie, setCookie } from 'cookies-next';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +15,46 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const router  = useRouter();
+  
+  const languages =  {
+    English : '/auto/en',
+    Assamese : '/auto/as',
+    Bengali : '/auto/bn',
+    Gujarati : '/auto/gu',
+    Hindi : '/auto/hi',
+    Kannada : '/auto/kn',
+    Konkani : '/auto/kok',
+    Malayalam : '/auto/ml',
+    Marathi : '/auto/mr',
+    Nepali : '/auto/ne',
+    Oriya : '/auto/or',
+    Punjabi : '/auto/pa',
+    Sanskrit : '/auto/sa',
+    Sindhi : '/auto/sd',
+    Tamil : '/auto/ta',
+    Telugu : '/auto/te',
+    Urdu : '/auto/ur',
+    Maithili : '/auto/mai',
+    Dogri : '/auto/doi'
+  }
+
+    // console.log(languages['English']);
+ 
+    const langChange = (lang) => {
+      console.log("done");
+      // if (hasCookie('googtrans')) {
+          setCookie('googtrans', languages[lang]);
+          // setSelected(e)
+      // }
+      window.location.reload()
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       import('@alan-ai/alan-sdk-web').then(({ default: alanBtn }) => {
         alanBtn({
           key: 'b71b2e5cb15cf5bcd70552aeca9033062e956eca572e1d8b807a3e2338fdd0dc/stage',
-          onCommand:({command})=>{
+          onCommand:({command, final, lang})=>{
             if(command==='navigateToDiscussion'){
               router.push('/discussion')
             }
@@ -32,6 +66,13 @@ export default function RootLayout({ children }) {
             }
             else if(command==='goBack'){
               router.back();
+            }
+            else if(command==='goToRoadmap'){
+              router.push(`/roadmap/${final}`);
+            }
+            else if(command==='changeLanguage'){
+              console.log('done');
+              langChange(lang);
             }
           }
         });
