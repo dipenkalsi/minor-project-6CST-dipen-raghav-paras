@@ -8,7 +8,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Skeleton } from "@/components/ui/skeleton"
 const page = () => {
     const [data, setData] = useState("")
-    const genAI = new GoogleGenerativeAI('AIzaSyAV5l_dP55g3gt3NmkzNF2N33xWB5_Z1dc');
+    const genAI = new GoogleGenerativeAI('AIzaSyAB1w7APtk8CthX1m8EubVkfmE5n-ZYF-Y');
 
     const pathname = usePathname();
     const splitted = pathname.split("/");
@@ -16,7 +16,7 @@ const page = () => {
 
     async function run() {
         // For text-only input, use the gemini-pro model
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
         const prompt = `Provide a html code for a descriptive roadmap to become a ${Branch} in India in 2024. Provide details about the best coaching institutions, entrance exams to clear(if any), best colleges in India etc. Use h2 tag for main headings and h4 tags for sub headings and heading colour must be black`
 
