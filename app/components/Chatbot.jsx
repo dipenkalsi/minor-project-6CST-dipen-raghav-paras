@@ -1,9 +1,10 @@
+'use client'
 import React, { useEffect } from 'react'
 
 const Chatbot = () => {
   useEffect(() => {
-    if (!document.querySelector('script[src="https://cdn.botpress.cloud/webchat/v1/inject.js"]')) {
-    const script = document.createElement('script')
+    if (!document?.querySelector('script[src="https://cdn.botpress.cloud/webchat/v1/inject.js"]')) {
+    const script = document?.createElement('script')
     script.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js'
     script.async = true
     document.body.appendChild(script)
