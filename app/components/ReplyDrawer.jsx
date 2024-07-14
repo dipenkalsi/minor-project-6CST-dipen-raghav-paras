@@ -1,12 +1,12 @@
 'use client'
-import { Button as ButtonS } from "@/components/ui/button"
+import { Button as ButtonS } from "./ui/button"
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerFooter,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "./ui/drawer"
 import {
   Card,
   Input,

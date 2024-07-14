@@ -7,17 +7,23 @@ import { benefitOne } from "./components/LandingPage/data";
 import Benefits from "./components/LandingPage/benefits";
 import Testimonials from "./components/LandingPage/testimonials";
 import Faq from "./components/LandingPage/faq";
+import Chatbot from "./components/Chatbot";
+import Footer from './components/Footer'
+
 
 const Home = () => {
+  
   return (
     <div >
       <Head>
-        <title>Nextly - Free Nextjs & TailwindCSS Landing Page Template</title>
+        <title>CareerCanvas - your completely free online career guide</title>
         <meta
           name="description"
-          content="Nextly is a free landing page template built with next.js & Tailwind CSS"
+          content="CareerCanvas - your completely free online career guide"
         />
         <link rel="icon" href="/favicon.ico" />
+        
+
       </Head>
 
       <Navbar />
@@ -38,6 +44,8 @@ const Home = () => {
         <SectionTitle title="Frequently Asked Questions">
         </SectionTitle>
         <Faq />
+        <Footer/>
+        {/* <Chatbot/> */}
       </div>
     </div>
   );

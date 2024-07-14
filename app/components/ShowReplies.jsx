@@ -7,7 +7,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
+} from "./ui/card"
 
 const ShowReplies = (props) => {
     const [replies, setReplies] = useState([])

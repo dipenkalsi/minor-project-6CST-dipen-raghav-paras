@@ -2,10 +2,10 @@
 import React from 'react'
 import { useState , useEffect} from 'react';
 import { usePathname } from 'next/navigation'
-import Navbar from '@/app/components/Navbar';
+import Navbar from '../../components/Navbar';
 import parse from 'html-react-parser';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "../../components/ui/skeleton";
 const page = () => {
     const [data, setData] = useState("")
     const genAI = new GoogleGenerativeAI('AIzaSyAB1w7APtk8CthX1m8EubVkfmE5n-ZYF-Y');

@@ -4,17 +4,17 @@ import React, { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '@/app/firebaseConfig';
+import { db } from '../../firebaseConfig';
 import {
     Card,
     CardContent,
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
-import Navbar from '@/app/components/Navbar';
-import { ReplyDrawer } from '@/app/components/ReplyDrawer';
-import ShowReplies from '@/app/components/ShowReplies';
+} from "../../components/ui/card"
+import Navbar from '../../components/Navbar';
+import { ReplyDrawer } from '../../components/ReplyDrawer';
+import ShowReplies from '../../components/ShowReplies';
 
 
 

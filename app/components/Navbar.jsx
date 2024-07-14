@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 import GoogleTranslate from './GoogleTranslate'
 import FilterContext from '../context/filterContext'
-import { Button } from "@/components/ui/button"
+import { Button } from "./ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -13,13 +13,13 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "./ui/dropdown-menu"
 
 import {
     Avatar,
     AvatarFallback,
     AvatarImage,
-} from "@/components/ui/avatar"
+} from "./ui/avatar"
 
 const Navbar = () => {
 

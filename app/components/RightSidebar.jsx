@@ -1,18 +1,18 @@
 "use client";
 import { useContext, useRef, useState, useCallback, useEffect } from "react";
-import { Label } from "@/app/components/ui/label"
+import { Label } from "./ui/label"
 import { X } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from ".//ui/badge";
 import {
 	Command,
 	CommandGroup,
 	CommandItem,
-} from "@/components/ui/command";
+} from "./ui/command";
 import { Command as CommandPrimitive } from "cmdk";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import FilterContext from "../context/filterContext";
 
 const SUBJECTS = [
