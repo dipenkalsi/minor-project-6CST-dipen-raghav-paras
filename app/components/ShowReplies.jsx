@@ -23,7 +23,7 @@ const ShowReplies = (props) => {
             for (let i = 0; i < temp.length; i++) {
                 if (i % 2 == 0) temp2.push(temp[i]);
             }
-            setReplies(temp2[0]);
+            setReplies([...temp2[0]].reverse());
         })()
     }, [])
 

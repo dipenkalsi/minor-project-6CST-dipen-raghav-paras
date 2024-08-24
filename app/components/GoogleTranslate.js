@@ -15,7 +15,7 @@ const GoogleTranslate = () => {
         { label: 'Gujarati', value: '/auto/gu' },
         { label: 'Hindi', value: '/auto/hi' },
         { label: 'Kannada', value: '/auto/kn' },
-        { label: 'Konkani', value: '/auto/kok' },
+        // { label: 'Konkani', value: '/auto/kok' },
         { label: 'Malayalam', value: '/auto/ml' },
         { label: 'Marathi', value: '/auto/mr' },
         { label: 'Nepali', value: '/auto/ne' },

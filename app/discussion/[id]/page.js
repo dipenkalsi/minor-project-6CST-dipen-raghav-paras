@@ -41,17 +41,20 @@ const page = () => {
                 if (i % 2 == 0) temp2.push(temp[i]);
             }
             setQuestions(temp2[0]);
-
+            // console.log(temp2[0])
         })()
     }, [])
 
     let data = null;
+
     for (let i = 0; i < questions.length; i++) {
         if (questions[i][0] == id) {
             data = questions[i][1]
         }
     }
 
+    // data=[...data].reverse();
+    console.log(data)
     return (
         <div className='h-screen fixed overflow-y-auto w-full bg-blue-50'>
             <Navbar />

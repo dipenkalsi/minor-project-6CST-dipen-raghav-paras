@@ -134,6 +134,33 @@ const RightSidebar = () => {
 		})
 		toast.success('Filters Applied')
 	}
+	const handleClearFilterClick = (e) => {
+
+
+		setSector(2);
+		setTime(3);
+		setMode(3);
+		setSelected([]);
+
+		// Reset filters object
+		setFilters({
+			Sector: 2,
+			Subjects: [],
+			Time_Devotion: 3,
+			Work_Mode: 3,
+		});
+
+		// Apply the cleared filters
+		applyFilters({
+			Sector: 2,
+			Subjects: [],
+			Time_Devotion: 3,
+			Work_Mode: 3,
+		});
+
+		// Show a success toast message
+		toast.success('Filters Cleared');
+	}
 
 	useEffect(() => {
 		applyFilters(filters)
@@ -174,7 +201,7 @@ const RightSidebar = () => {
 						<div className="grid w-full max-w-sm items-center gap-1.5">
 							<Label htmlFor="Sector">Sector</Label>
 
-							<select className="border-2 py-2 rounded-md" id="Sector" name="Sector"
+							<select className="border-2 py-2 rounded-md" id="Sector" name="Sector" value={sector}
 								onChange={(e) => setSector(e.target.value)}>
 								<option value={2}>Any</option>
 								<option value={0}>Government</option>
@@ -252,14 +279,14 @@ const RightSidebar = () => {
 
 							<Label htmlFor="Time_Devotion" className="mt-4">Time Devotion</Label>
 							<div ></div>
-							<select className="border-2 py-2 rounded-md" id="Time_Devotion" name="Time_Devotion" onChange={(e) => (setTime(e.target.value))}>
+							<select className="border-2 py-2 rounded-md" id="Time_Devotion" name="Time_Devotion" value={time}  onChange={(e) => (setTime(e.target.value))}>
 								<option value={3}>Any</option>
 								<option value={0}>Full Time</option>
 								<option value={1}>Part Time</option>
 							</select>
 
 							<Label htmlFor="Work_Mode" className="mt-4">Work Mode</Label>
-							<select className="border-2 py-2 rounded-md" id="Work_Mode" name="Work_Mode" onChange={(e) => (setMode(e.target.value))}>
+							<select className="border-2 py-2 rounded-md" id="Work_Mode" name="Work_Mode" value={mode} onChange={(e) => (setMode(e.target.value))}>
 								<option value={3}>Any</option>
 								<option value={0}>On Site</option>
 								<option value={1}>Remote</option>
@@ -268,7 +295,11 @@ const RightSidebar = () => {
 
 						</div>
 					</div>
-					<Button className='w-full' id="btn" onClick={handleClick}>Apply</Button>
+					<div className="rightSidebar-buttons flex flex-row ">
+
+						<Button className='w-full m-1' id="btn" onClick={handleClick}>Apply</Button>
+						<Button className='w-full m-1' id="btn" onClick={handleClearFilterClick}>Clear Filter</Button>
+					</div>
 				</nav>
 			</aside>
 		</div>

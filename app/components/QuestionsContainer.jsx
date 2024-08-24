@@ -29,7 +29,10 @@ const QuestionsContainer = () => {
       for (let i = 0; i < temp.length; i++) {
         if (i % 2 == 0) temp2.push(temp[i]);
       }
-      setQuestions(temp2[0]);
+      const reverseTemp=[...temp2[0]].reverse();
+      // temp2[0].reverse()
+      // console.log(reverseTemp)
+      setQuestions(reverseTemp);
     })()
   }, [])
 

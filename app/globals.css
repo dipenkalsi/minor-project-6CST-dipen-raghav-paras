@@ -110,3 +110,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+#bp-web-widget{
+  padding:0px;
+}
+.bp-widget-widget{
+  height:auto !important;
+  width:auto !important;
+}
