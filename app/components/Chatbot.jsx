@@ -20,7 +20,7 @@ const Chatbot = () => {
     }
   }, [])
 
-  return <div id="webchat" />
+  return <div id="webchat"/>
 }
 
 export default Chatbot

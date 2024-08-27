@@ -23,7 +23,7 @@ const page = () => {
         const result = await model.generateContent(prompt);
         const response = await result.response;
         const text = response.text();
-        const splittedtext = text.split("<body>")[1].split("</body>")[0];
+        const splittedtext = text?.split("<body>")[1]?.split("</body>")[0];
         setData(splittedtext);
         // console.log(text);
     }
