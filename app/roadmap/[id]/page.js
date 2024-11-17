@@ -16,16 +16,17 @@ const page = () => {
 
     async function run() {
         // For text-only input, use the gemini-pro model
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+        const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro"});
 
-        const prompt = `Provide a html code for a descriptive roadmap to become a ${Branch} in India in 2024. Provide details about the best coaching institutions, entrance exams to clear(if any), best colleges in India etc. Use h2 tag for main headings and h4 tags for sub headings and heading colour must be black`
+        const prompt = `Provide an exhaustive and fool proof roadmap in form of html code to become a ${Branch} in India in 2024. Make it very descriptive and lengthy. Provide details about the best coaching institutions, entrance exams to clear(if any), best colleges in India, scholarships offered by the institutes if any. Use tailwind CSS for styling etc. Use h2 tag for main headings and h4 tags for sub headings and heading.`
 
         const result = await model.generateContent(prompt);
-        const response = await result.response;
+        const response = result.response;
+        console.log(response);
         const text = response.text();
         const splittedtext = text?.split("<body>")[1]?.split("</body>")[0];
         setData(splittedtext);
-        // console.log(text);
+        console.log(splittedtext);
     }
 
     useEffect(() => {
